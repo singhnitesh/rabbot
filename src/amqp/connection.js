@@ -196,7 +196,7 @@ Adapter.prototype.bumpIndex = function () {
 Adapter.prototype.getNextUri = function () {
   const server = this.getNext(this.servers);
   const port = this.getNext(this.ports);
-  const uri = getUri(this.protocol, this.user, escape(this.pass), server, port, this.vhost, this.heartbeat);
+  const uri = getUri(this.protocol, this.user, encodeURIComponent(this.pass), server, port, this.vhost, this.heartbeat);
   return uri;
 };
 
